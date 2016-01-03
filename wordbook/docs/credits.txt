@@ -1,0 +1,6 @@
+Credits
+===============
+
+Originally developed by H. Salazar, with contributions by Catzwolf
+
+Version 2.0 was updated to XOOPS 2.5.7.2 Standard GUI by Michael Beck (Mamba)

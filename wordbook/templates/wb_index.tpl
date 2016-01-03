@@ -41,9 +41,9 @@
 <{* Category block *}>
 <{if $multicats == 1}>
 <div class="clearer">
-    <fieldset class="item" style="border:1px solid #778;margin:1em 0em;text-align:left;background-color:transparent;">
+    <fieldset class="item" style="border:1px solid #778;margin:1em 0;text-align:left;background-color:transparent;">
     <legend><{$smarty.const._MD_WB_BROWSECAT}></legend>
-        <div class="letters" style="margin:1em 0em;width:100%;padding:0em;text-align:center;line-height:1.3em;">
+        <div class="letters" style="margin:1em 0;width:100%;padding:0;text-align:center;line-height:1.3em;">
            <{foreach item=catlinks from=$block0.categories}>
            <{if $catlinks.total > 0}><a href="<{$xoops_url}>/modules/<{$lang_moduledirname}>/category.php?categoryID=<{$catlinks.id}>" title="[<{$catlinks.total}>]"><{/if}><{$catlinks.linktext}>
            <{if $catlinks.total > 0}></a> <{/if}>[<{$catlinks.total}>] | <{/foreach}>
@@ -85,8 +85,8 @@
 <{/if}>
 <{/if}>
 <div class="pad4">
-	<h5 class="term"><{$microlinks}><a href="<{$xoops_url}>/modules/<{$lang_moduledirname}>/entry.php?entryID=<{$random.entryID}>"><{$random.term}></a></h5>
-	<div class="nopadding"><{$random.definition}></div>
+    <h5 class="term"><{$microlinks}><a href="<{$xoops_url}>/modules/<{$lang_moduledirname}>/entry.php?entryID=<{$random.entryID}>"><{$random.term}></a></h5>
+    <div class="nopadding"><{$random.definition}></div>
 </div>
 </fieldset>
 </div>
@@ -122,7 +122,7 @@
 <b><{$smarty.const._MD_WB_REQ}></b>
 <{if $wehavereqs == '0'}><{$smarty.const._MD_WB_NOREQ}>
 <{else}>
-<br /><span style="font-size:80%"><{$smarty.const._MD_WB_REQUESTSUGGEST}></span><br />
+<br /><span style="font-size:80%;"><{$smarty.const._MD_WB_REQUESTSUGGEST}></span><br />
 <{/if}>
 <{foreach item=reqentries from=$blockR.reqstuff}>
 <a href="<{$xoops_url}>/modules/<{$lang_moduledirname}>/submit.php?suggest=<{$reqentries.id}>"><{$reqentries.linktext}></a>&nbsp;

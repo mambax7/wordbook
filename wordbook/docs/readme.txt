@@ -1,3 +1,6 @@
+README FIRST
+-----------------------
+
 <B>Wordbook v1.17</B>
 
 This is a mere maintenance-release.
@@ -62,7 +65,7 @@ This module is released under the GPL license. See GLP.txt for details.
 History
 -------
 10 April 2004 v 0.99
-First public release. 
+First public release.
 
 8 May 2004 v 1.00
 First official version.

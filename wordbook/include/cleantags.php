@@ -10,8 +10,7 @@ $allowedTags = '<a><acronym><address><b><br><blockquote><cite><code><div><dd><de
  * Disallow these attributes/prefix within a tag
  */
 //$stripAttrib = '';
-$stripAttrib = 'javascript|onclick|ondblclick|onmousedown|onmouseup|onmouseover|'.
-               'onmousemove|onmouseout|onkeypress|onkeydown|onkeyup|vbscript|about';
+$stripAttrib = 'javascript|onclick|ondblclick|onmousedown|onmouseup|onmouseover|' . 'onmousemove|onmouseout|onkeypress|onkeydown|onkeyup|vbscript|about';
 
 /**
  * @return string
@@ -20,10 +19,11 @@ $stripAttrib = 'javascript|onclick|ondblclick|onmousedown|onmouseup|onmouseover|
  */
 function wb_cleanTags($source)
 {
-   global $allowedTags;
-   $source = strip_tags($source, $allowedTags);
-   $source = preg_replace('/<(.*?)>/ie', "'<'.cleanAttributes('\\1').'>'", $source);
-   return $source;
+    global $allowedTags;
+    $source = strip_tags($source, $allowedTags);
+    $source = preg_replace('/<(.*?)>/ie', "'<'.cleanAttributes('\\1').'>'", $source);
+
+    return $source;
 }
 
 /**
@@ -33,10 +33,11 @@ function wb_cleanTags($source)
  */
 function cleanAttributes($tagSource)
 {
-   global $stripAttrib;
-   return stripslashes(preg_replace("/$stripAttrib/i", '', $tagSource));
+    global $stripAttrib;
+
+    return stripslashes(preg_replace("/$stripAttrib/i", '', $tagSource));
 }
 
 // Will output: <a href="forbiddenalert(1);" target="_blank" forbidden =" alert(1)">test</a>
 // echo wb_cleanTags('<a href="javascript:alert(1);" target="_blank" onMouseOver = "alert(1)">test</a>');
-?>
+

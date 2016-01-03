@@ -1,12 +1,23 @@
 <?php
-/**
- * $Id: admin.php v 1.0 8 May 2004 hsalazar Exp $
- * Module: Wordbook - a multicategory glossary
- * Version: v 1.00
- * Release Date: 8 May 2004
- * Author: hsalazar
- * Licence: GNU
+/*
+ * You may not change or alter any portion of this comment or credits
+ * of supporting developers from this source code or any supporting source code
+ * which is considered copyrighted (c) material of the original comment or credit authors.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  */
+
+/**
+ * @copyright    The XOOPS Project http://sourceforge.net/projects/xoops/
+ * @license      GNU GPL 2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
+ * @package      Wordbook - a multicategory glossary
+ * @since        8 May 2004
+ * @author       hsalazar, XOOPS Development Team
+ * @version      $Id $
+ */
+
 define("_AM_WB_ACTION", "Action");
 define("_AM_WB_ADMINCATMNGMT", "Category edition");
 define("_AM_WB_ADMINENTRYMNGMT", "Entry edition");
@@ -128,11 +139,14 @@ define("_AM_WB_ABOUT_AUTHOR_INFO", "Author info");
 define("_AM_WB_ABOUT_AUTHOR_NAME", "Author name");
 define("_AM_WB_ABOUT_AUTHOR_WORD", "Author's word");
 define("_AM_WB_ABOUT_DISCLAIMER", "Disclaimer");
-define("_AM_WB_ABOUT_DISCLAIMER_TEXT", "GPL-licensed.<BR>This module comes as is, without any guarantees whatsoever. This module is a Release Candidate and should not be used on a production web site. The module is still under active development and its use is under your own responsibility, which means the author is not responsible.");define("_AM_WB_ABOUT_CHANGELOG", "Changelog");
+define("_AM_WB_ABOUT_DISCLAIMER_TEXT", "GPL-licensed.<BR>This module comes as is, without any guarantees whatsoever. This module is a Release Candidate and should not be used on a production web site. The module is still under active development and its use is under your own responsibility, which means the author is not responsible.");
+define("_AM_WB_ABOUT_CHANGELOG", "Changelog");
 define("_AM_WB_ABOUT_README", "Readme");
 define("_AM_WB_ABOUT_DEMO", "Demo Site(s)");
 define("_AM_WB_ABOUT_SUBMIT_BUG", "Report a bug for this module");
 define("_AM_WB_ABOUT_SUBMIT_BUG_TEXT", "Submit a Bug");
 define("_AM_WB_ABOUT_SUBMIT_FEATURE", "Suggest a new feature for this module");
 define("_AM_WB_ABOUT_SUBMIT_FEATURE_TEXT", "Submit a feature request");
-?>
+//2.00
+define("_AM_WB_NOCATTOEDIT", "There are no categories to edit!");
+define("_AM_WB_NOENTRYTOEDIT", "There are no entries to edit!");

@@ -1,44 +1,63 @@
 <?php
-/**
- * $Id: admin_header.php v 1.0 8 May 2004 hsalazar Exp $
- * Module: Wordbook - a multicategory glossary
- * Version: v 1.00
- * Release Date: 8 May 2004
- * Author: hsalazar
- * Licence: GNU
+/*
+ * You may not change or alter any portion of this comment or credits
+ * of supporting developers from this source code or any supporting source code
+ * which is considered copyrighted (c) material of the original comment or credit authors.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  */
 
-include("../../../mainfile.php");
-include '../../../include/cp_header.php';
+/**
+ * @copyright    The XOOPS Project http://sourceforge.net/projects/xoops/
+ * @license      GNU GPL 2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
+ * @package      Wordbook - a multicategory glossary
+ * @since        8 May 2004
+ * @author       hsalazar, XOOPS Development Team
+ * @version      $Id $
+ */
 
-if ( file_exists("../language/".$xoopsConfig['language']."/main.php") ) 
-	{
-	include "../language/".$xoopsConfig['language']."/main.php";
-	}
-else 
-	{
-	include "../language/english/main.php";
-	}
-include_once XOOPS_ROOT_PATH."/modules/wordbook/include/functions.php";
-include_once XOOPS_ROOT_PATH."/class/xoopsmodule.php";
-include_once XOOPS_ROOT_PATH."/class/xoopstree.php";
-include_once XOOPS_ROOT_PATH."/class/xoopslists.php";
-include_once XOOPS_ROOT_PATH."/class/xoopsformloader.php";
+$moduleDirName = basename(dirname(__DIR__));
+include_once dirname(dirname(dirname(__DIR__))) . '/mainfile.php';
+include_once $GLOBALS['xoops']->path('www/include/cp_functions.php');
+include_once $GLOBALS['xoops']->path('www/include/cp_header.php');
+include_once $GLOBALS['xoops']->path('www/class/xoopsformloader.php');
+include_once $GLOBALS['xoops']->path('www/class/userutility.php');
+
+include_once XOOPS_ROOT_PATH . "/modules/wordbook/include/functions.php";
+include_once XOOPS_ROOT_PATH . "/kernel/module.php";
+include_once XOOPS_ROOT_PATH . "/class/xoopstree.php";
+include_once XOOPS_ROOT_PATH . "/class/xoopslists.php";
+include_once XOOPS_ROOT_PATH . "/class/xoopsformloader.php";
 $myts =& MyTextSanitizer::getInstance();
 
-if ( is_object( $xoopsUser)  ) 
-	{
-	$xoopsModule = XoopsModule::getByDirname("wordbook");
-	if ( !$xoopsUser->isAdmin($xoopsModule->mid()) ) 
-		{
-		redirect_header(XOOPS_URL."/",1,_NOPERM);
-		exit();
-		}
-	}
-else 
-	{
-	redirect_header(XOOPS_URL."/",1,_NOPERM);
-	exit();
-	}
+xoops_load('XoopsRequest');
 
-?>
+//$moduleDirName = $GLOBALS['xoopsModule']->getVar('dirname');
+
+$pathIcon16           = $GLOBALS['xoops']->url('www/' . $GLOBALS['xoopsModule']->getInfo('sysicons16'));
+$pathIcon32           = $GLOBALS['xoops']->url('www/' . $GLOBALS['xoopsModule']->getInfo('sysicons32'));
+$xoopsModuleAdminPath = $GLOBALS['xoops']->path('www/' . $GLOBALS['xoopsModule']->getInfo('dirmoduleadmin'));
+require_once "{$xoopsModuleAdminPath}/moduleadmin.php";
+
+$myts =& MyTextSanitizer::getInstance();
+if (!isset($GLOBALS['xoopsTpl']) || !($GLOBALS['xoopsTpl'] instanceof XoopsTpl)) {
+    include_once $GLOBALS['xoops']->path('class/template.php');
+    $xoopsTpl = new XoopsTpl();
+}
+
+//Module specific elements
+//include_once $GLOBALS['xoops']->path("modules/{$moduleDirName}/include/functions.php");
+//include_once $GLOBALS['xoops']->path("modules/{$moduleDirName}/include/config.php");
+
+//Handlers
+//$XXXHandler =& xoops_getModuleHandler('XXX', $moduleDirName);
+
+// Load language files
+xoops_loadLanguage('admin', $moduleDirName);
+xoops_loadLanguage('modinfo', $moduleDirName);
+xoops_loadLanguage('main', $moduleDirName);
+
+//xoops_cp_header();
+$adminObject = new ModuleAdmin();

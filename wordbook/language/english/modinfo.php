@@ -1,11 +1,21 @@
 <?php
+/*
+ * You may not change or alter any portion of this comment or credits
+ * of supporting developers from this source code or any supporting source code
+ * which is considered copyrighted (c) material of the original comment or credit authors.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ */
+
 /**
- * $Id: main.php v 1.0 8 May 2004 hsalazar Exp $
- * Module: Wordbook - a multicategory glossary
- * Version: v 1.00
- * Release Date: 8 May 2004
- * Author: hsalazar
- * Licence: GNU
+ * @copyright    The XOOPS Project http://sourceforge.net/projects/xoops/
+ * @license      GNU GPL 2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
+ * @package      Wordbook - a multicategory glossary
+ * @since        8 May 2004
+ * @author       hsalazar, XOOPS Development Team
+ * @version      $Id $
  */
 
 // Module Info
@@ -45,21 +55,21 @@ define("_MI_WB_AUTOAPPROVEDSC", "If set to 'Yes', XOOPS will publish submitted e
 define("_MI_WB_MULTICATS", "7. Do you want to have glossary categories?");
 define("_MI_WB_MULTICATSDSC", "If set to 'Yes', will allow you to have glossary categories. If set to no, will have a single automatic category.");
 
-define("_MI_WB_CATSINMENU","8. Should the categories be shown in the menu?"); 
-define("_MI_WB_CATSINMENUDSC","If set to 'Yes' if you want links to categories in the main menu."); 
+define("_MI_WB_CATSINMENU", "8. Should the categories be shown in the menu?");
+define("_MI_WB_CATSINMENUDSC", "If set to 'Yes' if you want links to categories in the main menu.");
 
-define("_MI_WB_CATSPERINDEX","9. Number of categories per page (User side)?"); 
-define("_MI_WB_CATSPERINDEXDSC","This will define how many categories will be shown in the index page."); 
+define("_MI_WB_CATSPERINDEX", "9. Number of categories per page (User side)?");
+define("_MI_WB_CATSPERINDEXDSC", "This will define how many categories will be shown in the index page.");
 
 define("_MI_WB_ALLOWADMINHITS", "10. Will the admin hits be included in the counter?");
 define("_MI_WB_ALLOWADMINHITSDSC", "If set to 'Yes', will increase counter for each entry on admin visits.");
 
-define("_MI_WB_MAILTOADMIN", "11. Send mail to admin on each new submission?");  
-define("_MI_WB_MAILTOADMINDSC", "If set to 'Yes', the manager will receive an e-mail for every submitted entry.");  
-define("_MI_WB_RANDOMLENGTH", "12. Length of string to show in random definitions?");  
+define("_MI_WB_MAILTOADMIN", "11. Send mail to admin on each new submission?");
+define("_MI_WB_MAILTOADMINDSC", "If set to 'Yes', the manager will receive an e-mail for every submitted entry.");
+define("_MI_WB_RANDOMLENGTH", "12. Length of string to show in random definitions?");
 define("_MI_WB_RANDOMLENGTHDSC", "How many characters do you want to show in the random term boxes, both in the main page and in the block? (Default: 150)");
 
-define("_MI_WB_LINKTERMS", "13. Show links to other glossary terms in the definitions?");  
+define("_MI_WB_LINKTERMS", "13. Show links to other glossary terms in the definitions?");
 define("_MI_WB_LINKTERMSDSC", "If set to 'yes', will automatically link in your definitions those terms you already have in your glossaries.");
 
 // Names of admin menu items
@@ -78,4 +88,15 @@ define("_MI_WB_ENTRIESTOP", "WB Most Read Terms");
 // added in version 1.17
 define("_MI_WB_ADMENU8", "Submissions");
 define("_MI_WB_ADMENU10", "About");
-?>
+
+// The name of this module
+define('_MI_WB_NAME', _MI_WB_MD_NAME);
+define('_MI_WB_DIRNAME', basename(dirname(dirname(__DIR__))));
+define('_MI_WB_HELP_HEADER', __DIR__ . '/help/helpheader.html');
+define('_MI_WB_BACK_2_ADMIN', 'Back to Administration of ');
+
+//define('_MI_WB_HELP_DIR', __DIR__);
+
+//help
+define('_MI_WB_HELP_OVERVIEW', 'Overview');
+define("_MI_WB_HELP", "Help");

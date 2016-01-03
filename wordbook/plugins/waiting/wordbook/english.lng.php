@@ -1,3 +1,2 @@
 <?php
-define("_MB_WAITING_SUBMS","Submitted");
-?>
+define("_MB_WAITING_SUBMS", "Submitted");

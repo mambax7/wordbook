@@ -28,7 +28,7 @@
 
 <div class="clearer2">
 <{foreach item=eachresult from=$resultset.match}>
-<img src="<{$xoops_url}>/modules/<{$eachresult.dir}>/images/wb.png" />&nbsp;<{$eachresult.microlinks}>&nbsp;<a href="<{$xoops_url}>/modules/<{$eachresult.dir}>/entry.php?entryID=<{$eachresult.entryID}>"><{$eachresult.term}></a><{if $multicats == 1}> <a href="<{$xoops_url}>/modules/<{$eachresult.dir}>/category.php?categoryID=<{$eachresult.categoryID}>">[<{$eachresult.catname}>]</a><{/if}><br />
+<img src="<{$xoops_url}>/modules/<{$eachresult.dir}>/assets/images/wb.png" />&nbsp;<{$eachresult.microlinks}>&nbsp;<a href="<{$xoops_url}>/modules/<{$eachresult.dir}>/entry.php?entryID=<{$eachresult.entryID}>"><{$eachresult.term}></a><{if $multicats == 1}> <a href="<{$xoops_url}>/modules/<{$eachresult.dir}>/category.php?categoryID=<{$eachresult.categoryID}>">[<{$eachresult.catname}>]</a><{/if}><br />
 <div class="result"><{$eachresult.definition}></div>
 <{/foreach}>
 <div align = 'left'><{$resultset.navbar}></div>

@@ -16,7 +16,7 @@
 <{foreach item=element from=$storyform.elements}>
 <{if $element.hidden != true}>
 <tr>
-<td width="160" style="text-align: right; line-height: 200%"><{$element.caption}></td><td width="10">&nbsp;</td>
+<td width="160" style="text-align: right; line-height: 200%;"><{$element.caption}></td><td width="10">&nbsp;</td>
 <td style="text-align: left;"><{$element.body}></td>
 </tr>
 <{else}>

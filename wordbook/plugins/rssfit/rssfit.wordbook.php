@@ -37,57 +37,78 @@
 *  XOOPS verson: 2.0.13.2 / 2.2.3 (!)
 */
 
-if( !defined('RSSFIT_ROOT_PATH') ){ exit(); }
-class Rssfitwordbook extends XoopsObject{
-	var $dirname = 'wordbook';
-	var $modname;
-	var $module;
-	var $grab;
-	
-	function Rssfitwordbook(){
-	}
-	
-	function loadModule(){
-		$mod =& $GLOBALS['module_handler']->getByDirname($this->dirname);
-		if( !$mod || !$mod->getVar('isactive') ){
-			return false;
-		}
-		$this->modname = $mod->getVar('name');
-		$this->module =& $mod;
-		return $mod;
-	}
-	
-	function &grabEntries(&$obj){
-		global $xoopsDB;
-		$myts =& MyTextSanitizer::getInstance();
-		//$perm_handler =& xoops_gethandler('groupperm');
-		$ret = false;
-		$i = 0;
-		$sql = "SELECT entryID, categoryID, term, definition, datesub FROM ".$xoopsDB->prefix("wbentries")." WHERE submit = 0 AND offline = 0 ORDER BY datesub DESC";
-		$result = $xoopsDB->query($sql, $this->grab, 0);
-		while( $row = $xoopsDB->fetchArray($result) ){
-		//	required
-				$ret[$i]['title'] = $row['term'];
-   				$link = XOOPS_URL.'/modules/'.$this->dirname.'/entry.php?entryID='.$row['entryID'];
-				//$ret[$i]['link'] = $ret[$i]['guid'] = $link;
-				$ret[$i]['link'] =  $link;
-				$ret[$i]['timestamp'] = $row['datesub'];
-				$ret[$i]['description'] = $myts->displayTarea($row['definition']);
-		//	optional
-				//5. The item synopsis, or description, whatever
-			    //$ret[$i]['guid'] = $link;
-				//	6. A string + domain that identifies a categorization taxonomy
-				$ret[$i]['category'] = $this->modname;		
-				$ret[$i]['domain'] = XOOPS_URL.'/modules/'.$this->dirname.'/';
-				/*$ret[$i]['extras'] = array();
-				//	7a. without attribute
-				$ret[$i]['extras']['author'] = array('content' => 'aabbc@c.com');
-				//	7b. with attributes
-				$ret[$i]['extras']['enclosure']['attributes'] = array('url' => 'url-to-any-file', 'length' => 1024000, 'type' => 'audio/mpeg');
-				*/
-				$i++;
-		}
-		return $ret;
-	}
+if (!defined('RSSFIT_ROOT_PATH')) {
+    exit();
 }
-?>
+
+/**
+ * Class Rssfitwordbook
+ */
+class Rssfitwordbook extends XoopsObject
+{
+    public $dirname = 'wordbook';
+    public $modname;
+    public $module;
+    public $grab;
+
+    /**
+     * Rssfitwordbook constructor.
+     */
+    public function __construct()
+    {
+    }
+
+    /**
+     * @return bool
+     */
+    public function loadModule()
+    {
+        $mod =& $GLOBALS['module_handler']->getByDirname($this->dirname);
+        if (!$mod || !$mod->getVar('isactive')) {
+            return false;
+        }
+        $this->modname = $mod->getVar('name');
+        $this->module  =& $mod;
+
+        return $mod;
+    }
+
+    /**
+     * @param $obj
+     * @return bool
+     */
+    public function &grabEntries(&$obj)
+    {
+        global $xoopsDB;
+        $myts =& MyTextSanitizer::getInstance();
+        //$perm_handler =& xoops_gethandler('groupperm');
+        $ret    = false;
+        $i      = 0;
+        $sql    = "SELECT entryID, categoryID, term, definition, datesub FROM " . $xoopsDB->prefix("wbentries") . " WHERE submit = 0 AND offline = 0 ORDER BY datesub DESC";
+        $result = $xoopsDB->query($sql, $this->grab, 0);
+        while ($row = $xoopsDB->fetchArray($result)) {
+            //  required
+            $ret[$i]['title'] = $row['term'];
+            $link             = XOOPS_URL . '/modules/' . $this->dirname . '/entry.php?entryID=' . $row['entryID'];
+            //$ret[$i]['link'] = $ret[$i]['guid'] = $link;
+            $ret[$i]['link']        = $link;
+            $ret[$i]['timestamp']   = $row['datesub'];
+            $ret[$i]['description'] = $myts->displayTarea($row['definition']);
+            //  optional
+            //5. The item synopsis, or description, whatever
+            //$ret[$i]['guid'] = $link;
+            //  6. A string + domain that identifies a categorization taxonomy
+            $ret[$i]['category'] = $this->modname;
+            $ret[$i]['domain']   = XOOPS_URL . '/modules/' . $this->dirname . '/';
+            /*$ret[$i]['extras'] = array();
+            //  7a. without attribute
+            $ret[$i]['extras']['author'] = array('content' => 'aabbc@c.com');
+            //  7b. with attributes
+            $ret[$i]['extras']['enclosure']['attributes'] = array('url' => 'url-to-any-file', 'length' => 1024000, 'type' => 'audio/mpeg');
+            */
+            $i++;
+        }
+
+        return $ret;
+    }
+}
