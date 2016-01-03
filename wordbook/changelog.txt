@@ -1,0 +1,36 @@
+<B>Wordbook v1.17 RC 1</B>
+maintenance-release
+
+- BugFix: global search-function was erroneous.
+- BugFix: letter.php: query 'show allentries' had no results.
+- Bugfix: admin/submissions.php (had no function at all).
+- BugFix: offline terms were included in autolinked terms.
+- Bugfix: changing category of entries is now possible in xoops versions other than 2.0.13.2.
+- Bugfix: include/cleantags.php
+- Bugfix: display HTML-tags
+- Bugfix: set $xoopsOption['template_main'] before including root/header.php - for caching.
+- renamed adminmenu() to wb_adminmenu() to avoid conflicts with other modules (cleanTags dito).
+- Changed: adminmenu
+- Changed: added icon search field
+- Changed: field 'reference' is automatically included in global search.
+- Changed: field 'reference' is automatically included in local search in terms & definitions.
+- Add: script to keep blocks settings onUpdate
+- Add: pagetitles:  eg: Site - Term - Category - Wordbook
+- Add: admin/about.php
+- Add: french language files
+- Add: plugins for modules 'waiting', 'What's New' and 'RSSFit'.
+
+
+<B>Wordbook v1.16</B>
+Fix: (by Alama) Grammatical and stylistic corrections to the English language interface to Wordbook 1.15 in main.php and modinfo.php
+Fix: Anonymous users can now see sub menu items if appropriated permissions are set.
+Fix: Fixed a bug in admin/entry.php. When an administrator modied an entry, became proprietary of entry and the combo box in which he could choose the author was ignored.
+Fix: Missing data in results produced by search.php. Not only was the category missing, but the entryID number of the term in the link is missing, making the first entry in the table come up for all word's links clicked.
+Modified: funtion getLinkedUnameFromId() in include/functions.php renamed to wb_getLinkedUnameFromId() to avoid possible duplicated function name error.
+Add: submit.php page uses now templates and css formating as the other pages do.
+Add: Submit option in main menu is shown only if user/anon-user is allowed to submit new words. (users and anonimous users privileges set in config section)
+
+<B>Wordbook v1.15 Beta 2</B>
+Fix: Fixed a bug in include/functions.php and block/random_term.php that caused browser cant go back if deletion of an entry is canceler (page del icon had a link with target="_blank" parameter instead "_self" or even nothing)
+New: Comments feature Added (modified files: moninfo.php entry.php admin/entry.php admin/category.php)
+New: Add an Import script from module Dictionary v0.9x (Import comments are made by moving them from Dictionary module to Wordbook module).

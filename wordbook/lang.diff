@@ -1,0 +1,56 @@
+
+Wordbook Language Differences 
+
+Legend :
++ Added
+- Removed
+* Modified
+
+Version v.1.17 
+
+--------------------------------------------------------------------------------
+
+admin.php : 
+
++ _AM_WB_UPDATEMODULE 
++ _AM_WB_ABOUT_RELEASEDATE 
++ _AM_WB_ABOUT_AUTHOR 
++ _AM_WB_ABOUT_CREDITS 
++ _AM_WB_ABOUT_LICENSE 
++ _AM_WB_ABOUT_WEBSITE 
++ _AM_WB_ABOUT_MODULE_INFO 
++ _AM_WB_ABOUT_MODULE_STATUS 
++ _AM_WB_ABOUT_MODULE_TEAM 
++ _AM_WB_ABOUT_AUTHOR_INFO 
++ _AM_WB_ABOUT_AUTHOR_NAME 
++ _AM_WB_ABOUT_AUTHOR_WORD 
++ _AM_WB_ABOUT_DISCLAIMER 
++ _AM_WB_ABOUT_DISCLAIMER_TEXT 
++ _AM_WB_ABOUT_CHANGELOG 
++ _AM_WB_ABOUT_README 
++ _AM_WB_ABOUT_DEMO 
++ _AM_WB_ABOUT_SUBMIT_BUG 
++ _AM_WB_ABOUT_SUBMIT_BUG_TEXT 
++ _AM_WB_ABOUT_SUBMIT_FEATURE 
++ _AM_WB_ABOUT_SUBMIT_FEATURE_TEXT 
+
+blocks.php :
+
+no changes
+
+main.php :
+
+no changes
+
+modinfo.php :
+
++ _MI_WB_ADMENU8
++ _MI_WB_ADMENU10
+
+waiting.php : 
+
++ _WB_WAITING_WAITINGS 
++ _WB_WAITING_REQUESTS 
+ 
+
+--------------------------------------------------------------------------------
