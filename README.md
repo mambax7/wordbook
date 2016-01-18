@@ -7,6 +7,6 @@
 
 However, please fork them and if you have any improvements and fixes, please share them back with us. 
 
-Visit us on http://xoops.org
+Please visit us on http://xoops.org
 
-The upcoming XOOPS CMS version is being crafted at: https://github.com/XOOPS
+**The "next generation" of XOOPS CMS is being crafted on GitHub at: https://github.com/XOOPS**
