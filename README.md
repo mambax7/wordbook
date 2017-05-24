@@ -1,6 +1,6 @@
 ![alt XOOPS CMS](http://xoops.org/images/logoXoops4GithubRepository.png)
 
-##Wordbook Module for [XOOPS CMS 2.5.x](http://xoops.org)
+## Wordbook Module for [XOOPS CMS 2.5.x](http://xoops.org)
 
 **Wordbook** for  [XOOPS CMS 2.5.x](http://xoops.org) is a flexible and versatile module that uses XOOPS features to provide the infrastructure to build attractive, usable and powerful glossaries, dictionaries, or encyclopedias..
 
