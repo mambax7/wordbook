@@ -23,7 +23,7 @@ $xoopsOption['template_main'] = 'wb_letter.tpl';
 include_once(XOOPS_ROOT_PATH . "/header.php");
 
 global $xoTheme, $xoopsUser, $xoopsUser, $xoopsConfig, $xoopsDB, $modify, $xoopsModuleConfig, $xoopsModule, $XOOPS_URL, $indexp;
-$myts =& MyTextSanitizer::getInstance();
+$myts = MyTextSanitizer::getInstance();
 
 $init = isset($_GET['init']) ? $_GET['init'] : 0;
 $xoopsTpl->assign('firstletter', $init);

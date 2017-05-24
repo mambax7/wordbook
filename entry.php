@@ -24,7 +24,7 @@ include_once(XOOPS_ROOT_PATH . "/header.php");
 include_once XOOPS_ROOT_PATH . "/class/module.textsanitizer.php";
 
 global $xoTheme, $xoopsUser, $xoopsUser, $xoopsConfig, $xoopsDB, $modify, $xoopsModuleConfig, $xoopsModule, $XOOPS_URL;
-$myts =& MyTextSanitizer::getInstance();
+$myts = MyTextSanitizer::getInstance();
 
 $entryID = isset($_GET['entryID']) ? (int)($_GET['entryID']) : 0;
 

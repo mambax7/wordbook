@@ -43,7 +43,7 @@ if (empty($_POST['submit'])) {
 } else {
     extract($_POST);
     $display   = "D";
-    $myts      =& MyTextSanitizer::getInstance();
+    $myts      = MyTextSanitizer::getInstance();
     $usermail  = (isset($_POST['usermail'])) ? $myts->stripSlashesGPC($_POST['usermail']) : '';
     $username  = (isset($_POST['username'])) ? $myts->stripSlashesGPC($_POST['username']) : '';
     $reqterm   = (isset($_POST['reqterm'])) ? $myts->makeTboxData4Save($_POST['reqterm']) : '';

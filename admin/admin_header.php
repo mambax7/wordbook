@@ -30,7 +30,7 @@ include_once XOOPS_ROOT_PATH . "/kernel/module.php";
 include_once XOOPS_ROOT_PATH . "/class/xoopstree.php";
 include_once XOOPS_ROOT_PATH . "/class/xoopslists.php";
 include_once XOOPS_ROOT_PATH . "/class/xoopsformloader.php";
-$myts =& MyTextSanitizer::getInstance();
+$myts = MyTextSanitizer::getInstance();
 
 xoops_load('XoopsRequest');
 
@@ -41,7 +41,7 @@ $pathIcon32           = $GLOBALS['xoops']->url('www/' . $GLOBALS['xoopsModule']-
 $xoopsModuleAdminPath = $GLOBALS['xoops']->path('www/' . $GLOBALS['xoopsModule']->getInfo('dirmoduleadmin'));
 require_once "{$xoopsModuleAdminPath}/moduleadmin.php";
 
-$myts =& MyTextSanitizer::getInstance();
+$myts = MyTextSanitizer::getInstance();
 if (!isset($GLOBALS['xoopsTpl']) || !($GLOBALS['xoopsTpl'] instanceof XoopsTpl)) {
     include_once $GLOBALS['xoops']->path('class/template.php');
     $xoopsTpl = new XoopsTpl();

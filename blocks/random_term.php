@@ -21,7 +21,7 @@
 function b_entries_random_show()
 {
     global $xoopsDB, $xoopsConfig, $xoopsModule, $xoopsModuleConfig, $xoopsUser;
-    $myts =& MyTextSanitizer::getInstance();
+    $myts = MyTextSanitizer::getInstance();
     include_once XOOPS_ROOT_PATH . "/modules/wordbook/include/cleantags.php";
 
     $adminlinks     = '';

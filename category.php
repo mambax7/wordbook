@@ -23,7 +23,7 @@ $xoopsOption['template_main'] = 'wb_category.tpl';
 include_once(XOOPS_ROOT_PATH . "/header.php");
 
 global $xoTheme, $xoopsUser, $xoopsUser, $xoopsConfig, $xoopsDB, $modify, $xoopsModuleConfig, $xoopsModule, $XOOPS_URL, $indexp;
-$myts =& MyTextSanitizer::getInstance();
+$myts = MyTextSanitizer::getInstance();
 
 $categoryID = isset($_GET['categoryID']) ? (int)($_GET['categoryID']) : 0;
 

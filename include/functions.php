@@ -37,7 +37,7 @@ function wb_getLinkedUnameFromId($userid = 0, $name = 0)
         $user           =& $member_handler->getUser($userid);
 
         if (is_object($user)) {
-            $ts        =& MyTextSanitizer::getInstance();
+            $ts        = MyTextSanitizer::getInstance();
             $username  = $user->getVar('uname');
             $usernameu = $user->getVar('name');
 
@@ -303,7 +303,7 @@ function wb_adminMenu ($currentoption = 0, $breadcrumb = '' ) {
 function wb_create_pagetitle($article = '', $topic = '')
 {
     global $xoopsModule, $xoopsTpl;
-    $myts    =& MyTextSanitizer::getInstance();
+    $myts    = MyTextSanitizer::getInstance();
     $content = '';
     if (!empty($article)) {
         $content .= strip_tags($myts->displayTarea($article));

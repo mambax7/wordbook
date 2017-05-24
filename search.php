@@ -24,7 +24,7 @@ include("header.php");
 $xoopsOption['template_main'] = 'wb_search.tpl';
 include(XOOPS_ROOT_PATH . "/header.php");
 global $xoTheme, $xoopsDB, $xoopsModule, $xoopsModuleConfig, $searchtype;
-$myts =& MyTextSanitizer::getInstance();
+$myts = MyTextSanitizer::getInstance();
 
 include_once XOOPS_ROOT_PATH . '/class/pagenav.php';
 // obsolete

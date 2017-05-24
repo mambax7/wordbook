@@ -19,7 +19,7 @@
  */
 
 include("admin_header.php");
-$myts =& MyTextSanitizer::getInstance();
+$myts = MyTextSanitizer::getInstance();
 $op   = '';
 
 if (isset($_GET['op'])) {
@@ -45,7 +45,7 @@ switch ($op) {
             xoops_cp_header();
         global $xoopsUser, $xoopsUser, $xoopsConfig, $xoopsDB, $xoopsModuleConfig, $xoopsModule, $entryID;
 
-        $myts =& MyTextSanitizer::getInstance();
+        $myts = MyTextSanitizer::getInstance();
         // wb_adminMenu(0, _AM_WB_INDEX);
         $result01 = $xoopsDB->query("SELECT COUNT(*) FROM " . $xoopsDB->prefix("wbcategories") . " ");
         list($totalcategories) = $xoopsDB->fetchRow($result01);

@@ -19,7 +19,7 @@
  */
 
 include("admin_header.php");
-$myts =& MyTextSanitizer::getInstance();
+$myts = MyTextSanitizer::getInstance();
 $op   = '';
 
 if (isset($_GET['op'])) {
@@ -45,7 +45,7 @@ switch ($op) {
             xoops_cp_header();
         global $xoopsUser, $xoopsUser, $xoopsConfig, $xoopsDB, $xoopsModuleConfig, $xoopsModule, $entryID;
 
-        $myts =& MyTextSanitizer::getInstance();
+        $myts = MyTextSanitizer::getInstance();
 
         //v.1.17 completely rewritten had no content
         // wb_adminMenu(3, _AM_WB_SUBMITS);
